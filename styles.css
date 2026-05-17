@@ -348,17 +348,8 @@ h3 {
   border-radius: var(--radius-md);
 }
 
-.hero__oneliner {
-  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-  color: var(--color-text-secondary);
-  line-height: 1.5;
-  max-width: 720px;
+.hero--centered .hero__subtitle {
   margin-inline: auto;
-  margin-bottom: var(--space-xs);
-}
-
-.hero__oneliner strong {
-  color: var(--color-text);
 }
 
 .hero__buy {
@@ -617,35 +608,22 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 1rem 1.25rem;
-  background: var(--color-surface);
-  border: 2px solid var(--color-border);
+  background: var(--color-red);
+  border: 2px solid var(--color-red);
   border-radius: var(--radius-md);
   text-decoration: none;
-  color: var(--color-text);
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.9375rem;
-  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(230, 57, 70, 0.2);
+  transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .buy-btn:hover {
-  border-color: var(--color-navy);
-  background: var(--color-navy);
-  color: #ffffff;
+  background: #cf2f3f;
+  border-color: #cf2f3f;
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(26, 39, 68, 0.2);
-}
-
-.buy-btn--primary {
-  border-color: var(--color-navy);
-  background: var(--color-navy);
-  color: #ffffff;
-  box-shadow: 0 4px 16px rgba(26, 39, 68, 0.2);
-}
-
-.buy-btn--primary:hover {
-  background: var(--color-navy-light);
-  border-color: var(--color-navy-light);
-  box-shadow: 0 8px 28px rgba(26, 39, 68, 0.32);
+  box-shadow: 0 8px 28px rgba(230, 57, 70, 0.35);
 }
 
 .buy-grid--hero {
