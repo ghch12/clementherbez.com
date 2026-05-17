@@ -348,14 +348,17 @@ h3 {
   border-radius: var(--radius-md);
 }
 
-.hero--centered .hero__title {
-  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+.hero__oneliner {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-xs);
 }
 
-.hero--centered .hero__subtitle {
-  margin-inline: auto;
-  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-  max-width: 600px;
+.hero__oneliner strong {
+  color: var(--color-text);
 }
 
 .hero__buy {
