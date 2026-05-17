@@ -756,10 +756,9 @@ h3 {
 }
 
 .book-section__cover {
-  width: 200px;
+  width: 320px;
   height: auto;
   filter: drop-shadow(0 16px 40px rgba(26, 39, 68, 0.22));
-  border-radius: var(--radius-sm);
 }
 
 .book-section__title {
@@ -784,7 +783,7 @@ h3 {
 
   .book-section__cover {
     margin-inline: auto;
-    width: 160px;
+    width: 240px;
   }
 }
 
