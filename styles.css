@@ -329,6 +329,35 @@ h3 {
   }
 }
 
+/* ===== Hero Centered (livre page) ===== */
+.hero--centered .hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.hero--centered .hero__book {
+  order: -1;
+}
+
+.hero--centered .hero__book-img {
+  max-width: 580px;
+  filter: drop-shadow(0 24px 56px rgba(26, 39, 68, 0.22));
+  border-radius: var(--radius-md);
+}
+
+.hero--centered .hero__subtitle {
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .hero--centered .hero__book-img {
+    max-width: 100%;
+  }
+}
+
 /* ===== About / Qui suis-je ===== */
 .about {
   background: var(--color-surface);
@@ -418,9 +447,10 @@ h3 {
 
 .links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
   gap: 1rem;
-  max-width: 860px;
+  max-width: 900px;
   margin-inline: auto;
 }
 
@@ -428,7 +458,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.125rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -487,6 +517,12 @@ h3 {
   color: var(--color-navy);
 }
 
+@media (max-width: 767px) {
+  .links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Footer ===== */
 .site-footer {
   background: var(--color-navy);
@@ -518,22 +554,23 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  transition: background var(--transition-fast);
+  color: rgba(255, 255, 255, 0.8);
+  transition: background var(--transition-fast), color var(--transition-fast);
 }
 
 .site-footer__social a:hover {
   background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
-.site-footer__social img {
+.site-footer__social svg {
   width: 18px;
   height: 18px;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+  fill: currentColor;
 }
 
 .site-footer__copy {
@@ -541,7 +578,11 @@ h3 {
   color: rgba(255, 255, 255, 0.45);
 }
 
-/* ===== Buy Buttons (livre.html) ===== */
+/* ===== Buy Buttons (livre page) ===== */
+.buy-section {
+  background: var(--color-surface);
+}
+
 .buy-section__header {
   text-align: center;
   margin-bottom: var(--space-lg);
@@ -549,9 +590,9 @@ h3 {
 
 .buy-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  max-width: 680px;
+  max-width: 800px;
   margin-inline: auto;
 }
 
@@ -559,8 +600,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.625rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.25rem;
   background: var(--color-surface);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -568,7 +608,7 @@ h3 {
   color: var(--color-text);
   font-weight: 600;
   font-size: 0.9375rem;
-  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .buy-btn:hover {
@@ -576,29 +616,40 @@ h3 {
   background: var(--color-navy);
   color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(26, 39, 68, 0.2);
 }
 
 .buy-btn--primary {
-  grid-column: 1 / -1;
-  max-width: 340px;
-  margin-inline: auto;
   border-color: var(--color-navy);
   background: var(--color-navy);
   color: #ffffff;
-  padding: 1.125rem 2rem;
-  font-size: 1rem;
-  box-shadow: 0 4px 20px rgba(26, 39, 68, 0.25);
+  box-shadow: 0 4px 16px rgba(26, 39, 68, 0.2);
 }
 
 .buy-btn--primary:hover {
   background: var(--color-navy-light);
+  border-color: var(--color-navy-light);
   box-shadow: 0 8px 28px rgba(26, 39, 68, 0.32);
 }
 
-/* ===== Pitch Section (livre.html) ===== */
+@media (max-width: 767px) {
+  .buy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Pitch Section (livre page) ===== */
+.pitch {
+  background: var(--color-bg);
+}
+
 .pitch__inner {
-  max-width: var(--max-width-text);
+  max-width: 740px;
   margin-inline: auto;
+}
+
+.pitch__inner .section-label,
+.pitch__inner h2 {
   text-align: center;
 }
 
@@ -609,11 +660,18 @@ h3 {
 .pitch__body {
   color: var(--color-text-secondary);
   font-size: 1.0625rem;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .pitch__body p + p {
-  margin-top: 1rem;
+  margin-top: 1.125rem;
+}
+
+.pitch__body p:first-child {
+  font-size: 1.1875rem;
+  color: var(--color-text);
+  font-weight: 500;
+  font-style: italic;
 }
 
 /* ===== Livre Author Section ===== */
@@ -624,6 +682,114 @@ h3 {
 
 .livre-author .about__photo {
   max-width: 280px;
+}
+
+/* ===== About Page Hero ===== */
+.about-hero {
+  padding-top: calc(var(--nav-height) + var(--space-xl));
+  padding-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.about-hero__subtitle {
+  color: var(--color-text-secondary);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.55;
+  max-width: 560px;
+  margin-inline: auto;
+  margin-top: var(--space-sm);
+}
+
+/* ===== About Page — Jikji Section ===== */
+.jikji-section {
+  background: var(--color-bg);
+}
+
+.jikji-section__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.jikji-section__logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.jikji-section__title {
+  margin-bottom: var(--space-xs);
+}
+
+.jikji-section__body {
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.jikji-section__body p + p {
+  margin-top: 0.875rem;
+}
+
+@media (max-width: 767px) {
+  .jikji-section__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .jikji-section__logo {
+    margin-inline: auto;
+  }
+}
+
+/* ===== About Page — Book Section ===== */
+.book-section {
+  background: var(--color-surface);
+}
+
+.book-section__inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.book-section__cover {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 16px 40px rgba(26, 39, 68, 0.22));
+  border-radius: var(--radius-sm);
+}
+
+.book-section__title {
+  margin-bottom: var(--space-xs);
+}
+
+.book-section__body {
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-md);
+}
+
+.book-section__body p + p {
+  margin-top: 0.875rem;
+}
+
+@media (max-width: 767px) {
+  .book-section__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .book-section__cover {
+    margin-inline: auto;
+    width: 160px;
+  }
 }
 
 /* ===== Scroll Reveal Animations ===== */

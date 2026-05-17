@@ -52,16 +52,17 @@ if (!prefersReduced) {
 }
 
 /* ===== Active Nav Link ===== */
-const currentPath = window.location.pathname;
+function normalizePath(path) {
+  return path.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
+}
+
+const currentPath = normalizePath(window.location.pathname);
+
 document.querySelectorAll('.nav__links a').forEach(link => {
   const href = link.getAttribute('href');
-  if (!href) return;
+  if (!href || href.startsWith('#')) return;
 
-  const isHome = (href === 'index.html' || href === '/' || href === './') &&
-    (currentPath === '/' || currentPath.endsWith('/index.html') || currentPath.endsWith('/'));
-  const isMatch = !isHome && href && currentPath.endsWith(href);
-
-  if (isHome || isMatch) {
+  if (normalizePath(href) === currentPath) {
     link.classList.add('active');
   }
 });

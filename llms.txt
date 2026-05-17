@@ -19,7 +19,7 @@ Sous-titre : Comment bâtir un business en ligne valorisable, structurer une éq
 - ISBN : 9789908844091
 - Date de parution : 27 mai 2026
 - Éditeur : Éditions Jikji
-- Page du livre : https://clementherbez.com/livre.html
+- Page du livre : https://clementherbez.com/livre/
 - Amazon : https://www.amazon.fr/dp/9908844091/
 - Fnac : https://www.fnac.com/a23104607/Clement-Herbez-Zero-Bureau
 - Cultura : https://www.cultura.com/p-zero-bureau-9789908844091.html
@@ -34,7 +34,8 @@ Les Éditions Jikji est une maison d'édition fondée par Clément Herbez, spéc
 ## Liens officiels
 
 - Site personnel : https://clementherbez.com
-- Page livre Zéro Bureau : https://clementherbez.com/livre.html
+- Page livre Zéro Bureau : https://clementherbez.com/livre/
+- Page à propos : https://clementherbez.com/a-propos/
 - Éditions Jikji : https://www.jikji-editions.com/
 - YouTube : https://www.youtube.com/@clementherbez
 - Instagram : https://www.instagram.com/clementherbez
