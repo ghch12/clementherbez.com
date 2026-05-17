@@ -343,7 +343,7 @@ h3 {
 }
 
 .hero--centered .hero__book-img {
-  max-width: 580px;
+  max-width: 820px;
   filter: drop-shadow(0 24px 56px rgba(26, 39, 68, 0.22));
   border-radius: var(--radius-md);
 }
@@ -630,6 +630,11 @@ h3 {
   background: var(--color-navy-light);
   border-color: var(--color-navy-light);
   box-shadow: 0 8px 28px rgba(26, 39, 68, 0.32);
+}
+
+.buy-grid--hero {
+  margin-top: var(--space-md);
+  max-width: none;
 }
 
 @media (max-width: 767px) {
