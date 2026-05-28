@@ -787,6 +787,38 @@ h3 {
   }
 }
 
+/* ===== 404 Error Page ===== */
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.error-page__inner {
+  text-align: center;
+}
+
+.error-page__code {
+  display: block;
+  font-size: clamp(5rem, 12vw, 9rem);
+  font-weight: 800;
+  color: var(--color-red);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.error-page__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: var(--space-xs);
+}
+
+.error-page__text {
+  color: var(--color-text-secondary);
+  font-size: 1.0625rem;
+  margin-bottom: var(--space-md);
+}
+
 /* ===== Scroll Reveal Animations ===== */
 .reveal {
   opacity: 0;
